@@ -1,0 +1,19 @@
+version: '1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8081
+  nats:
+    image: nats-streaming:alpine
+    ports:
+      - "4222:4222"
